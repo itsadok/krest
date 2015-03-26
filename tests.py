@@ -494,6 +494,11 @@ class KrestTest(unittest.TestCase):
                 self.ep.search("stats/volumes", __datapoints=i)
             should_complete_in(t+float(i)/8)(search)(self)
 
+    def test_get_raw(self):
+        """Test that ._get_raw is working"""
+        self.create_volume_objects()
+        v = self.ep.search("volumes", name__contains_some="unittest").hits[0]
+        self.assertIsInstance(v._get_raw("volume_group"), krest.RestObjectProxy)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)

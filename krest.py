@@ -411,7 +411,6 @@ class RestObject(RestObjectBase):
         if attr not in self._current:
             raise AttributeError(attr)
         val = self._current[attr]
-        val = self._current[attr]
         if self._ep.lazy_load_references and isinstance(val, RestObjectProxy):
             val = val()
             self._current[attr] = val
@@ -425,6 +424,9 @@ class RestObject(RestObjectBase):
             else:
                 self._current[k] = v
         self._changed = dict()
+
+    def _get_raw(self, attr):
+        return self._current[attr]
 
     def __str__(self):
         return "<%s('%s') %s>" % (self.__class__.__name__, self._resource_type, self._current)
