@@ -13,15 +13,6 @@ import requests
 from requests.exceptions import ConnectionError, HTTPError
 import time
 
-# Enabling logging in your krest application
-# import krest
-# import logging
-# logging.addHandler(km_log_handler)
-# logging.getLogger("krest").setLevel(logging.DEBUG)
-# logging.getLogger("request").setLevel(logging.DEBUG)
-
-# TODO: Parse errors properly
-
 
 class KrestProtocolError(Exception):
     def __init__(self, message, response):
