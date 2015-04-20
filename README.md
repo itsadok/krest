@@ -1,3 +1,7 @@
+![PyPi version](https://img.shields.io/pypi/v/krest.svg)
+
+# krest
+
 The Kaminario REST (krest) is a client library that provides ORM like interface for working with 
 [Kaminario K2](http://kaminario.com/flash-array/) 
 REST API.
@@ -7,6 +11,11 @@ and monitoring Kaminario K2 all-flash arrays using Python.
 
 This readme file complements the Kaminario K2 REST API guide document. You can request 
 this document from the Kaminario support team.
+
+# Installation
+```
+pip install krest
+```
 
 # Usage
 
@@ -74,7 +83,7 @@ For the full list of search modifiers please refer to the K2 REST API guide.
    This allows native usage of `RestObject` in your code, i.e. `ep.search("hosts", host_group=hg)`
 1. If a field value is instance of `ResultSet`, `list` or `tuple`, then list elements are converted to string by comma-joining
    and `__in` is added to the field name. This allows doing things like
-   `ep.search("hosts", host_group=[hg1, hg2])
+   `ep.search("hosts", host_group=[hg1, hg2])`
 
 ## Working with `ResultSet`s
 `ResultSet`s are returned by the  `.search()` method of `KrestEndPoint`. The number of results returned from the API 
