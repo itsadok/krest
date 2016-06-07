@@ -20,7 +20,7 @@ Please see the project homepage_ for full description.
 """
 
 setup(name="krest",
-      version="1.3.0",
+      version="1.3.1",
       py_modules=["krest"],
       install_requires=["requests >= 2.0.0"],
       maintainer="Zaar Hai",
@@ -37,5 +37,6 @@ setup(name="krest",
                    'License :: OSI Approved :: Apache Software License',
                    'Programming Language :: Python',
                    'Programming Language :: Python :: 2.6',
-                   'Programming Language :: Python :: 2.7'),
+                   'Programming Language :: Python :: 2.7',
+                   'Programming Language :: Python :: 3.4'),
       )
